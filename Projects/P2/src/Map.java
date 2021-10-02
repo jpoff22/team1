@@ -59,7 +59,8 @@ public class Map{
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-		return field.get(loc);
+		//wallSet and emptySet will help you write this method
+		return null;
 	}
 
 	public boolean attack(String Name) {
