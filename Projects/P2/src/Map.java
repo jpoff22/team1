@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import javax.swing.JComponent;
@@ -64,8 +65,18 @@ public class Map{
 	}
 
 	public boolean attack(String Name) {
-		//update gameOver
-		return false;
+        Location pacmanLoc= locations.get("pacman");
+        Location ghostLoc= locations.get(Name);
+        if (ghostLoc == null)
+            return false;
+
+        for (int[] pos : new int[][]{{0,1}, {0,-1}, {1,0}, {-1,0}}) {
+            Location check= ghostLoc.shift(pos[0], pos[1]);
+            if (check.equals(pacmanLoc))
+                gameOver= true;
+        }
+        
+        return gameOver;
 	}
 	
 	public JComponent eatCookie(String name) {
