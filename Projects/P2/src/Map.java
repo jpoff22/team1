@@ -66,8 +66,11 @@ public class Map{
 		
 		// update field at current location
 		Location prevLoc= locations.get(name);	
-		if (prevLoc != null) 
-			field.remove(prevLoc);
+		if (prevLoc != null) {
+			HashSet<Type> typesAtPrev= field.get(prevLoc);
+			if (typesAtPrev != null)
+				typesAtPrev.remove(type);
+		}
 
         // update component, field, and locations using the new location
 		components.get(name).setLocation(loc.x, loc.y);
