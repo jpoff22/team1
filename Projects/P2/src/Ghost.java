@@ -33,6 +33,7 @@ public class Ghost{
 
 		Location move = moves.get(0);
 		myMap.move(myName, move, Map.Type.GHOST);
+		myLoc = move;
 		return true;
 	}
 
@@ -42,7 +43,7 @@ public class Ghost{
             if (myMap.getLoc(check).contains(Map.Type.PACMAN))
                 return true;
         }
-
+  
 		return false;
 	}
 
