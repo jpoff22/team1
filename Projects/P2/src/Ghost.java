@@ -38,13 +38,13 @@ public class Ghost{
 	}
 
 	public boolean is_pacman_in_range() { 
-        for (int[] pos : new int[][]{{0,1}, {0,-1}, {1,0}, {-1,0}}) {
-            Location check= myLoc.shift(pos[0], pos[1]);
-            if (myMap.getLoc(check).contains(Map.Type.PACMAN))
-                return true;
-        }
-  
-		return false;
+		for (int[] pos : new int[][]{{0,1}, {0,-1}, {1,0}, {-1,0}}) {
+		    Location check= myLoc.shift(pos[0], pos[1]);
+		    if (myMap.getLoc(check).contains(Map.Type.PACMAN))
+				return true;
+		}
+
+			return false;
 	}
 
 	public boolean attack() {
