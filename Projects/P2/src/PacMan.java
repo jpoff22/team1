@@ -1,7 +1,6 @@
 import java.util.HashSet;
 import java.util.ArrayList;
 
-import javax.naming.event.NamingExceptionEvent;
 import javax.swing.JComponent;
 import java.util.Random;
 
