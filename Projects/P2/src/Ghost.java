@@ -23,7 +23,7 @@ public class Ghost{
 		}
 
 		Location move = moves.get(0);
-		myMap.move(myName, move, Map.Type.PACMAN);
+		myMap.move(myName, move, Map.Type.GHOST);
 		return true;
 
 	}
