@@ -62,12 +62,18 @@ public class Map{
         // bounds check
         if (loc.x > dim/2 || loc.x < 0 || loc.y > dim/2 || loc.y < 0)
             return false;
+		
+		
+		// update field at current location
+		Location prevLoc= locations.get(name);	
+		if (prevLoc != null) 
+			field.remove(prevLoc);
 
         // update component, field, and locations using the new location
-        components.get(name).setLocation(loc.x, loc.y);
+		components.get(name).setLocation(loc.x, loc.y);
 		if (!field.containsKey(loc)) field.put(loc, new HashSet<Type>());
 		field.get(loc).add(type);
-        locations.put(name, loc);
+		locations.put(name, loc);
 
         return true;
 	}
