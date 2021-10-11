@@ -24,11 +24,12 @@ public class Ghost{
 
 		Location move = moves.get(0);
 		myMap.move(myName, move, Map.Type.GHOST);
+		myLoc = move;
 		return true;
 
 	}
 
-	public boolean is_pacman_in_range() { 
+	public boolean is_pacman_in_range() {
 		return false;
 	}
 
