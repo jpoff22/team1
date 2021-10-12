@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import javax.swing.JComponent;
 import java.util.Random;
 
-import Map.Type;
-
 public class PacMan{
 	String myName;
 	Location myLoc;
