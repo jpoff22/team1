@@ -92,7 +92,7 @@ public class Map{
 	}
 	
 	public JComponent eatCookie(String name) {
-        PacManComponent pacmanCmp= components.get(name);
+        JComponent pacmanCmp= components.get(name);
         Location loc= locations.get(name);
         HashSet<Type> types= field.get(loc);
 
@@ -110,7 +110,7 @@ public class Map{
         // update
         String cookieName= "tok_x" + (loc.x) + "_y" + (loc.y);
 
-        CookieComponent cookieCmp= components.get(cookieName);
+        JComponent cookieCmp= components.get(cookieName);
         components.remove(cookieName);
         locations.remove(cookieName);
         types.remove(Map.Type.COOKIE);
