@@ -18,7 +18,7 @@ public class TestMapAttack {
         PacMan pacman= frame.addPacMan(new Location(1,1));
         Map map= frame.getMap();
 
-        Ghost ghost1= frame.addGhost(pacman.myLoc.shift(1,0), "Bob", Color.red)
+        Ghost ghost1= frame.addGhost(pacman.myLoc.shift(1,0), "Bob", Color.red);
         Ghost ghost2= frame.addGhost(pacman.myLoc.shift(4,4), "John", Color.red);
 
         // not in range

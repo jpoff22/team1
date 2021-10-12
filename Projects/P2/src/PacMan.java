@@ -8,7 +8,7 @@ public class PacMan{
 	String myName;
 	Location myLoc;
 	Map myMap;
-	Location shift; 
+	Location shift;
 
 	public PacMan(String name, Location loc, Map map) {
 		this.myLoc = loc;
@@ -46,12 +46,12 @@ public class PacMan{
 		int i = rand.nextInt(moves.size());
 
 		myLoc = new Location(moves.get(i).x, moves.get(i).y);
-		
+
 		return myMap.move("pacman", myLoc, Map.Type.PACMAN);
 
 	}
 
-	public boolean is_ghost_in_range() { 
+	public boolean is_ghost_in_range() {
 		//ArrayList <Ghost> myGhosts = MainFrame.ghosts;
 		Map.Type mynum = Map.Type.EMPTY;
 
@@ -66,7 +66,7 @@ public class PacMan{
 		return false;
 	}
 
-	public JComponent consume() { 
+	public JComponent consume() {
 
 		if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)) {
 			return myMap.eatCookie("pacman");
