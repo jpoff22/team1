@@ -2,7 +2,7 @@
 
 by Jayson Hurst, ..., ..., Liam DeVoe
 
-[[image goes here]]
+![imag](https://github.com/cmsc389T-fall21/team1/blob/main/Projects/P2/Capture.PNG)
 
 ### Running
 
