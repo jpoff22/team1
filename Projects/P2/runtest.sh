@@ -15,4 +15,5 @@ if [ $? -eq 0 ]; then
 		java -cp tests/junit-4.10.jar;tests/;src/ org.junit.runner.JUnitCore ${test_name%.*}
 	else
 		java -cp tests/junit-4.10.jar:tests/:src/ org.junit.runner.JUnitCore ${test_name%.*}
+	fi
 fi
