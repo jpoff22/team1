@@ -2,9 +2,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import javax.swing.JComponent;
 
-import com.sun.jdi.Location;
-
-import org.graalvm.compiler.lir.CompositeValue.Component;
 
 public class Map{
 
@@ -95,9 +92,9 @@ public class Map{
 	}
 	
 	public JComponent eatCookie(String name) {
-        Component pacmanCmp= components.get(name);
+        PacManComponent pacmanCmp= components.get(name);
         Location loc= locations.get(name);
-        HashSet<Type> types= field.get(pacmanLoc);
+        HashSet<Type> types= field.get(loc);
 
         if (types == null || loc == null)
             return null;
@@ -113,7 +110,7 @@ public class Map{
         // update
         String cookieName= "tok_x" + (loc.x) + "_y" + (loc.y);
 
-        Component cookieCmp= components.get(cookieName);
+        CookieComponent cookieCmp= components.get(cookieName);
         components.remove(cookieName);
         locations.remove(cookieName);
         types.remove(Map.Type.COOKIE);
