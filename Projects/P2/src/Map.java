@@ -2,6 +2,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import javax.swing.JComponent;
 
+
 public class Map{
 
 	public enum Type {
@@ -91,8 +92,29 @@ public class Map{
 	}
 	
 	public JComponent eatCookie(String name) {
-		//update locations, components, field, and cookies
-		//the id for a cookie at (10, 1) is tok_x10_y1
-		return null;
+        PacManComponent pacmanCmp= components.get(name);
+        Location loc= locations.get(name);
+        HashSet<Type> types= field.get(loc);
+
+        if (types == null || loc == null)
+            return null;
+
+        // make sure pacman is at the location that we got from name
+        if (!types.contains(Map.Type.PACMAN)) 
+            return null;
+
+        // if no cookie at location then we can't eat
+        if (!types.contains(Map.Type.COOKIE))
+            return null;
+
+        // update
+        String cookieName= "tok_x" + (loc.x) + "_y" + (loc.y);
+
+        CookieComponent cookieCmp= components.get(cookieName);
+        components.remove(cookieName);
+        locations.remove(cookieName);
+        types.remove(Map.Type.COOKIE);
+
+        return cookieCmp;
 	}
 }
