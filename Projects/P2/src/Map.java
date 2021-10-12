@@ -53,19 +53,41 @@ public class Map{
 	}
 		
 	public boolean move(String name, Location loc, Type type) {
-		//update locations, components, and field
-		//use the setLocation method for the component to move it to the new location
-		return false;
+        if (type != Map.Type.PACMAN && type != Map.Type.GHOST)
+            return false;
+        
+        if (field.get(loc) != null && field.get(loc).contains(Map.Type.WALL))
+            return false;
+
+        // bounds check
+        if (loc.x > dim/2 || loc.x < 0 || loc.y > dim/2 || loc.y < 0)
+            return false;
+		
+		
+		// update field at current location
+		Location prevLoc= locations.get(name);	
+		if (prevLoc != null) {
+			HashSet<Type> typesAtPrev= field.get(prevLoc);
+			if (typesAtPrev != null)
+				typesAtPrev.remove(type);
+		}
+
+        // update component, field, and locations using the new location
+		components.get(name).setLocation(loc.x, loc.y);
+		if (!field.containsKey(loc)) field.put(loc, new HashSet<Type>());
+		field.get(loc).add(type);
+		locations.put(name, loc);
+
+        return true;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-		//wallSet and emptySet will help you write this method
-		return null;
+		return field.get(loc);
 	}
 
 	public boolean attack(String Name) {
-		//update gameOver
-		return false;
+		gameOver= true;
+        return gameOver;
 	}
 	
 	public JComponent eatCookie(String name) {
