@@ -20,7 +20,7 @@ public class TestMapEatCookie {
 
         // add a cookie
         int row= 1;
-        int col= 1
+        int col= 1;
         Location loc= new Location(row,col);
         CookieComponent tok = new CookieComponent(loc.x,loc.y,frame.scale);
         myMap.add("tok_x"+row+"_y"+col, loc, tok, Map.Type.COOKIE);
