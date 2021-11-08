@@ -15,7 +15,7 @@ jobs:
         run: |
           cd Projects/P2
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          
+
   test-consume:
     runs-on: ubuntu-latest
     steps:
@@ -28,8 +28,7 @@ jobs:
         run: |
           cd Projects/P2
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/"
-          org.junit.runner.JUnitCore TestConsume
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
 
   test-pacman-move:
     runs-on: ubuntu-latest
@@ -43,8 +42,7 @@ jobs:
         run: |
           cd Projects/P2
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/"
-          org.junit.runner.JUnitCore TestPacManMove
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
 
   test-ghost-in-range:
     runs-on: ubuntu-latest
@@ -58,5 +56,4 @@ jobs:
         run: |
           cd Projects/P2
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/"
-          org.junit.runner.JUnitCore TestGhostInRange
+          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostInRange
