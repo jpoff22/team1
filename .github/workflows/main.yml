@@ -26,4 +26,6 @@ jobs:
           java-version: '8'
       - name: run test ghost move
         run: |
+          cd Projects/P2
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
           java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
