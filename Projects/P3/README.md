@@ -8,16 +8,16 @@ Make sure you have completed P2 before you start this project.
 
 **This project will require collaborating among at least 8 people**. Some key initial steps to take are,
 
-- Create cards for Part 1, 2, and 3 and assign deadlines. 
-  - Add these deadlines on your cards on your Kanban Board to make thenm visible to the entire team 
+- Create cards for Part 1, 2, and 3 and assign deadlines.
+  - Add these deadlines on your cards on your Kanban Board to make thenm visible to the entire team
   - Features needs to be merged to main by your PM - make sure they also know when your deadline is.
 - Reach out to the other team and communicate on when both teams will have Part 2 completed by
-  - Ensure that you have a way to communicate with all teams that you have been paired with 
+  - Ensure that you have a way to communicate with all teams that you have been paired with
   - Each team will need to complete Part 2 before the other team can fork their repository. The deadlines on your cards will help communicate this
 
 ## Introduction
 
-**READ THE BEFORE YOU START SECTION BEFORE CONTINUING** 
+**READ THE BEFORE YOU START SECTION BEFORE CONTINUING**
 
 In this project, you will adding Continous Integration pipelines to your PacMan project. This project has three parts:
 
@@ -32,7 +32,7 @@ The instructions below call for branching a feature-item for each member rather 
 
 **Only one person** from each team needs to take the following steps:
 
-1. Create a feature-item actions-setup for the main.yaml file 
+1. Create a feature-item actions-setup for the main.yaml file
 2. Add a main.yml file to your feature-item that uses the openjdk image and compiles all of your files
 3. Create a pull request, add a reviewer, and have the reviewer merge the feature-item to FTR-actions
 
@@ -59,7 +59,7 @@ Once all feature-items have been completed
 1. Checkout a new branch from the FTR-sabotage feature branch that is titled with sabotage-your_name
 2. Change your function so that it will fail the test you wrote previously
 3. Create a pull request, add a reviewer, and have the reviewer merge your feature-item to FTR-sabotage
- 
+
 **Any 'mistakes' that you have intentionally made MUST be reversible**
 
 Once the steps above have been completed, your team should
@@ -86,7 +86,7 @@ Only one person from each team needs
 
 Once the repository has been forked, the team should
 
-4. Analyze the tests failing the issues 
+4. Analyze the tests failing the issues
 5. Divide and conquer the necessary fixes (you may want to fix the same functions you sabotaged in Part 1 and wrote for Project 2)
 
 Each member should
