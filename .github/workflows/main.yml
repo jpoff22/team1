@@ -18,6 +18,7 @@ jobs:
 
   test-ghost-move:
     needs: compile-tests
+    runs-on: ubuntu-latest
     steps:
       - name: run test ghost move
         run: |
