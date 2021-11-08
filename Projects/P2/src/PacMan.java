@@ -25,7 +25,7 @@ public class PacMan{
 		ArrayList<Location> validMoves = new ArrayList<Location>();
 
 		for (Location loc : new Location[]{up, down, left, right}) {
-			if (myMap.getLoc(loc).contains(Map.Type.WALL)) {
+			if (myMap.getLoc(loc) != null && myMap.getLoc(loc).contains(Map.Type.WALL)) {
 				continue;
 			}
 			validMoves.add(loc);
