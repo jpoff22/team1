@@ -18,5 +18,6 @@ jobs:
 
   test-ghost-move:
     needs: compile-tests
-    run: |
-      java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
+    steps:
+      run: |
+        java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
