@@ -37,7 +37,7 @@ public class PacMan{
 	public boolean move() {
 		ArrayList<Location> moves = get_valid_moves();
 
-		if (moves.size() == 0) {
+		if (moves.size() > 0) {
 			return false;
 		}
 
@@ -56,10 +56,10 @@ public class PacMan{
 		Map.Type mynum = Map.Type.EMPTY;
 
 		//check above, to the right, below, and to the left of myLoc for a ghost
-		if (myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)) != null && myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)).contains(Map.Type.GHOST)
-		|| myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)) != null && myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)).contains(Map.Type.GHOST)
-		|| myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)) != null && myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)).contains(Map.Type.GHOST)
-		|| myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)) != null && myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)).contains(Map.Type.GHOST)) {
+		if (myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)) != null && myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)).contains(Map.Type.PACMAN)
+		|| myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)) != null && myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)).contains(Map.Type.PACMAN)
+		|| myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)) != null && myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)).contains(Map.Type.PACMAN)
+		|| myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)) != null && myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)).contains(Map.Type.PACMAN)) {
 			return true;
 		}
 
@@ -68,7 +68,7 @@ public class PacMan{
 
 	public JComponent consume() {
 
-		if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)) {
+		if (myMap.getLoc(myLoc).contains(Map.Type.GHOST)) {
 			return myMap.eatCookie("pacman");
 		}
 
