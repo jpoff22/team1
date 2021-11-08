@@ -15,5 +15,7 @@ public class TestPacManValidMoves extends TestCase {
 		assertTrue(moves.contains(new Location(1, 4)));
 		assertTrue(moves.contains(new Location(3, 4)));
 		assertTrue(moves.contains(new Location(2, 3)));
+
+		assertTrue(moves.contains(new Location(6, 8)));
 	}
 }
