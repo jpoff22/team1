@@ -3,13 +3,12 @@ import java.awt.Color;
 import java.io.*;
 
 public class TestConsume extends TestCase {
-	@Test
 	public void testConsume() throws FileNotFoundException {
-		
+
         	NoFrame frame= null;
 			try {
 				frame= new NoFrame();
-				
+
 			} catch (FileNotFoundException e) {
 				System.out.println(e);
 			}
@@ -27,6 +26,5 @@ public class TestConsume extends TestCase {
 			//should be null because there is no longer a cookie
 			assertNull(mypacman2.consume());
 
-		}	
+		}
 }
-

@@ -14,7 +14,7 @@ public class TestGhostInRange extends TestCase {
 		frame.addGhost(new Location(10, 12), "Blinky", Color.RED);
 		assertEquals(false, pacman.is_ghost_in_range());
 
-		frame.getMap().move("Blinky", new Location(10, 11));
+		frame.getMap().move("Blinky", new Location(10, 11), Map.Type.GHOST);
 		assertEquals(true, pacman.is_ghost_in_range());
 	}
 }
