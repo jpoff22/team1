@@ -15,7 +15,7 @@ jobs:
         run: |
           cd Projects/P2
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-      
+          
   test-consume:
     runs-on: ubuntu-latest
     steps:
