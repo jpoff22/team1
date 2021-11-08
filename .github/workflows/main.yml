@@ -15,10 +15,3 @@ jobs:
         run: |
           cd Projects/P2
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/*.java tests/*.java
-
-  test-ghost-move:
-    needs: compile-tests
-    steps:
-      - name: test ghost move
-        run: |
-          java -Djava.awt.headless=true -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
