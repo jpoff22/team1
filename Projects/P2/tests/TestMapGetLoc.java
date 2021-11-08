@@ -20,6 +20,6 @@ public class TestMapGetLoc {
         Map map = frame.getMap();
 
 		assertEquals(true, map.getLoc(new Location(10, 2)).contains(Map.Type.GHOST));
-		assertEquals(true, map.getLoc(new Location(1, 2)).contains(Map.Type.PACMAN));
+		assertEquals(true, map.getLoc(new Location(1, 3)).contains(Map.Type.PACMAN));
 	}
 }
