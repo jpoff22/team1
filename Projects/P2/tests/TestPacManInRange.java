@@ -5,6 +5,13 @@ import java.io.*;
 public class TestPacManInRange extends TestCase {
 
 	public void testPacManInRange() throws FileNotFoundException{
+		NoFrame frame= null;
+			try {
+				frame= new NoFrame();
+				
+			} catch (FileNotFoundException e) {
+				System.out.println(e);
+			}
 		Ghost ghost = frame.addGhost(new Location(3, 4), "name", Color.red); //Creates a red ghost named "name" at location x,y
 	PacMan pacman = frame.addPacMan(new Location(1, 2)); //Creates PacMan at location x, y
 	assertFalse(ghost.is_pacman_in_range());
