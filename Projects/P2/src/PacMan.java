@@ -17,10 +17,10 @@ public class PacMan{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-		Location up = myLoc.shift(0, 1);
-		Location down = myLoc.shift(0, -1);
-		Location left = myLoc.shift(-1, 0);
-		Location right = myLoc.shift(1, 0);
+		Location up = myLoc.shift(-1, 0);
+		Location down = myLoc.shift(1, 0);
+		Location left = myLoc.shift(0, -1);
+		Location right = myLoc.shift(0, 1);
 
 		ArrayList<Location> validMoves = new ArrayList<Location>();
 
