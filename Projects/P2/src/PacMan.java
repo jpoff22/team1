@@ -17,10 +17,10 @@ public class PacMan{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-		Location up = myLoc.shift(0, 1);
-		Location down = myLoc.shift(0, -1);
-		Location left = myLoc.shift(-1, 0);
-		Location right = myLoc.shift(1, 0);
+		Location up = myLoc.shift(-1, 0);
+		Location down = myLoc.shift(1, 0);
+		Location left = myLoc.shift(0, -1);
+		Location right = myLoc.shift(0, 1);
 
 		ArrayList<Location> validMoves = new ArrayList<Location>();
 
@@ -37,7 +37,7 @@ public class PacMan{
 	public boolean move() {
 		ArrayList<Location> moves = get_valid_moves();
 
-		if (moves.size() > 0) {
+		if (moves.size() == 0) {
 			return false;
 		}
 
@@ -56,10 +56,10 @@ public class PacMan{
 		Map.Type mynum = Map.Type.EMPTY;
 
 		//check above, to the right, below, and to the left of myLoc for a ghost
-		if (myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)) != null && myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)).contains(Map.Type.PACMAN)
-		|| myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)) != null && myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)).contains(Map.Type.PACMAN)
-		|| myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)) != null && myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)).contains(Map.Type.PACMAN)
-		|| myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)) != null && myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)).contains(Map.Type.PACMAN)) {
+		if (myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)) != null && myMap.getLoc(new Location(myLoc.x, myLoc.y + 1)).contains(Map.Type.GHOST)
+		|| myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)) != null && myMap.getLoc(new Location(myLoc.x + 1, myLoc.y)).contains(Map.Type.GHOST)
+		|| myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)) != null && myMap.getLoc(new Location(myLoc.x, myLoc.y - 1)).contains(Map.Type.GHOST)
+		|| myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)) != null && myMap.getLoc(new Location(myLoc.x - 1, myLoc.y)).contains(Map.Type.GHOST)) {
 			return true;
 		}
 
@@ -68,7 +68,7 @@ public class PacMan{
 
 	public JComponent consume() {
 
-		if (myMap.getLoc(myLoc).contains(Map.Type.GHOST)) {
+		if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE)) {
 			return myMap.eatCookie("pacman");
 		}
 
